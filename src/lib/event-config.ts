@@ -13,7 +13,7 @@ export const DEFAULT_EVENT: EventConfig = {
   dateLabel: "March 2025",
 };
 
-export const STORAGE_KEY = "eventpulse:event";
+export const STORAGE_KEY = "postmanager:event";
 
 export function normalizeHashtag(raw: string): string | null {
   const tag = raw.trim().replace(/^#+/, "").replace(/[^\p{L}\p{N}_]/gu, "");

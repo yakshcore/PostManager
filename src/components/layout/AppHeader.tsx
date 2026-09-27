@@ -25,13 +25,13 @@ export function AppHeader() {
       <div className="h-16 w-full px-4 sm:px-6 flex items-center justify-between gap-4">
         <div className="flex items-center gap-3 shrink-0">
           <Link className="flex items-center gap-2.5" href="/organizer">
-            <img alt="EventPulse Brand Logo" className="h-8 w-auto object-contain" src="/stitch/logo.svg" />
+            <img alt="PostManager Brand Logo" className="h-8 w-auto object-contain" src="/brand/logo.svg" />
           </Link>
-          <span className="hidden sm:inline px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+          <span className="hidden xl:inline px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
             AI Post Suite
           </span>
         </div>
-        <nav className="hidden md:flex items-center h-full space-x-1 shrink-0">
+        <nav className="hidden lg:flex items-center h-full space-x-1 shrink-0">
           {NAV.map((item) => {
             const active = item.match !== null && pathname.startsWith(item.match);
             return (
@@ -39,7 +39,7 @@ export function AppHeader() {
                 key={item.label}
                 href={item.href}
                 aria-current={active ? "page" : undefined}
-                className={`h-full flex items-center px-4 ${active ? `transition-colors ${ACTIVE}` : IDLE}`}
+                className={`h-full flex items-center px-3 2xl:px-4 ${active ? `transition-colors ${ACTIVE}` : IDLE}`}
               >
                 {item.label}
               </Link>
@@ -49,10 +49,10 @@ export function AppHeader() {
         <div className="flex items-center gap-3 shrink-0">
           <Link
             href="/organizer"
-            className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container-low border border-outline-variant/60 cursor-pointer hover:bg-surface-container transition-colors"
+            className="hidden md:flex lg:hidden xl:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container-low border border-outline-variant/60 cursor-pointer hover:bg-surface-container transition-colors"
           >
             <span className="w-2 h-2 rounded-full bg-tertiary-container animate-pulse" />
-            <span className="font-label-md text-label-md text-on-surface font-medium truncate max-w-[150px] lg:max-w-none">
+            <span className="font-label-md text-label-md text-on-surface font-medium truncate max-w-[150px] 2xl:max-w-none">
               {event.name}
             </span>
             <Icon name="unfold_more" className="text-on-surface-variant text-[18px]" />
@@ -68,7 +68,7 @@ export function AppHeader() {
           <div className="h-6 w-px bg-outline-variant/60 hidden sm:block" />
           <div className="flex items-center gap-2.5 pl-1 cursor-pointer group">
             <img alt="Profile" className="w-8 h-8 rounded-full object-cover ring-1 ring-outline-variant/40" src="/stitch/avatar.jpg" />
-            <div className="hidden lg:flex flex-col text-left">
+            <div className="hidden xl:flex flex-col text-left">
               <span className="font-label-md text-label-md text-on-surface font-semibold leading-tight">Sarah Lin</span>
               <span className="font-label-sm text-label-sm text-on-surface-variant leading-tight">Event Lead</span>
             </div>
@@ -76,8 +76,8 @@ export function AppHeader() {
           </div>
         </div>
       </div>
-      {/* Mobile nav: the Stitch header hides tabs below md, so they move to a scrollable row here. */}
-      <nav className="md:hidden flex items-center gap-1 px-2 overflow-x-auto border-t border-outline-variant/30">
+      {/* Mobile nav: the full tab bar only fits from lg up, so they move to a scrollable row here. */}
+      <nav className="lg:hidden flex items-center gap-1 px-2 overflow-x-auto border-t border-outline-variant/30">
         {NAV.map((item) => {
           const active = item.match !== null && pathname.startsWith(item.match);
           return (

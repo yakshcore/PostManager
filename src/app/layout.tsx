@@ -4,9 +4,9 @@ import { AppFooter } from "@/components/layout/AppFooter";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "EventPulse · AI Post Suite",
-  description: "Turn event moments into LinkedIn posts with EventPulse AI.",
-  icons: { icon: "/stitch/logo.svg" },
+  title: "PostManager · AI Post Suite",
+  description: "Turn event moments into LinkedIn posts with PostManager AI.",
+  icons: { icon: "/brand/logo.svg" },
 };
 
 export const viewport: Viewport = { width: "device-width", initialScale: 1 };

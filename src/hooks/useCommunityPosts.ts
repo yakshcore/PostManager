@@ -3,7 +3,7 @@
 import { useCallback, useSyncExternalStore } from "react";
 import type { CommunityPost } from "@/lib/types";
 
-const KEY = "eventpulse:posts";
+const KEY = "postmanager:posts";
 const MAX_STORED = 50;
 const EMPTY: CommunityPost[] = [];
 const listeners = new Set<() => void>();

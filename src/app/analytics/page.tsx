@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Icon } from "@/components/ui/Icon";
 
-export const metadata: Metadata = { title: "Analytics · EventPulse" };
+export const metadata: Metadata = { title: "Analytics · PostManager" };
 
 // No Stitch screen exists for Analytics yet; placeholder in the same design language.
 export default function AnalyticsPage() {

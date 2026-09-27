@@ -91,7 +91,7 @@ export function AttendeeGenerator({ event }: { event: EventConfig }) {
                   name={loading ? "progress_activity" : "auto_awesome"}
                   className={`text-[22px] transition-transform ${loading ? "animate-spin" : "group-hover:rotate-12"}`}
                 />
-                <span>{loading ? "Writing your post…" : post ? "Generate New Post" : "Generate LinkedIn Post with EventPulse AI"}</span>
+                <span>{loading ? "Writing your post…" : post ? "Generate New Post" : "Generate LinkedIn Post with PostManager AI"}</span>
               </button>
               {loading && (
                 <button type="button" onClick={cancel} className="self-center font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface underline">
