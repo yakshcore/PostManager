@@ -15,7 +15,7 @@ Files here are the original exports — **do not edit**. Build the app from them
 | Attendee View | c8f514106df84bb795b4e38316fe881c | `attendee-view/code.html`, `screenshot.png` |
 
 - `design-system/DESIGN.md` — "Executive Pulse" design system (tokens + component specs).
-- `design-system/tailwind.config.stitch.js` — Tailwind config pulled verbatim from the HTML (identical in both screens).
+- `design-system/tailwind.config.stitch.mjs` — Tailwind config pulled verbatim from the HTML (identical in both screens).
 - `hosted-image-map.tsv` — the `lh3.googleusercontent.com` URLs used in the HTML, mapped to the local files above (all 4 are byte-identical duplicates of the asset screens).
 
 ## Export notes / limitations

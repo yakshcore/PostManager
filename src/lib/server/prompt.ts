@@ -10,7 +10,7 @@ Rules:
 - Open with a strong one-line hook. Keep paragraphs to 1–3 short lines separated by blank lines.
 - 120–220 words before the hashtags.
 - Mention the organizer as "@<Organizer>" once, naturally.
-- Only state facts the attendee provided or that are clearly visible in the photos. Never invent names, numbers, awards, or companies.
+- Only state facts the attendee provided or that are clearly visible in the photos. Never invent names, numbers, durations (e.g. "3 days", "months"), awards, or companies. If a detail is unknown, leave it out.
 - End with a blank line and then the hashtags on a single line: include every official event hashtag, plus at most 2 relevant extra ones.`;
 
 export function buildUserPrompt(req: GenerateRequest, withImages: boolean): string {
@@ -47,7 +47,7 @@ export function buildUserPrompt(req: GenerateRequest, withImages: boolean): stri
     );
   }
 
-  return lines.filter((l) => l !== false && l !== undefined).join("\n");
+  return lines.filter((l): l is string => typeof l === "string").join("\n");
 }
 
 /** Defensive cleanup in case the model ignores the formatting rules. */
@@ -57,6 +57,7 @@ export function cleanPost(raw: string): string {
     .replace(/\*\*(.+?)\*\*/g, "$1")
     .replace(/__(.+?)__/g, "$1")
     .replace(/^#{1,6}\s+/gm, "")
+    .replace(/[ \t]+$/gm, "")
     .replace(/^["“](.*)["”]$/s, "$1")
     .replace(/\n{3,}/g, "\n\n")
     .trim();

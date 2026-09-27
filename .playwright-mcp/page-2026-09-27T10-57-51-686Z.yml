@@ -1,0 +1,350 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - link [ref=e5] [cursor=pointer]:
+          - /url: /organizer
+          - img "EventPulse Brand Logo" [ref=e6]
+        - generic [ref=e7]: AI Post Suite
+      - navigation [ref=e8]:
+        - link "Organizer Dashboard" [ref=e9] [cursor=pointer]:
+          - /url: /organizer
+        - link "Attendee View" [ref=e10] [cursor=pointer]:
+          - /url: /attendee
+        - link "Post Generator" [ref=e11] [cursor=pointer]:
+          - /url: /attendee#create
+        - link "Analytics" [ref=e12] [cursor=pointer]:
+          - /url: /analytics
+      - generic [ref=e13]:
+        - link "Google H2S Bootcamp 2025" [ref=e14] [cursor=pointer]:
+          - /url: /organizer
+          - generic [aria-hidden] [ref=e17]: unfold_more
+        - button "Notifications" [ref=e18] [cursor=pointer]:
+          - generic [aria-hidden] [ref=e19]: notifications
+        - generic [ref=e22] [cursor=pointer]:
+          - img "Profile" [ref=e23]
+          - generic [ref=e24]:
+            - generic [ref=e25]: Sarah Lin
+            - generic [ref=e26]: Event Lead
+          - generic [aria-hidden] [ref=e27]: expand_more
+  - main [ref=e28]:
+    - generic [ref=e30]:
+      - generic [ref=e31]:
+        - generic [ref=e32]:
+          - generic [ref=e33]:
+            - heading "Welcome back, Sarah 👋" [level=1] [ref=e34]
+            - generic [ref=e35]: Pro Organizer Plan
+          - paragraph [ref=e36]: Manage your events, attendee engagement links, and viral social reach in real time.
+        - generic [ref=e37]:
+          - generic [ref=e38] [cursor=pointer]:
+            - generic [ref=e42]:
+              - generic [ref=e43]: Active Event
+              - generic [ref=e44]: Google H2S Bootcamp 2025
+            - generic [aria-hidden] [ref=e45]: keyboard_arrow_down
+          - button "Export Analytics" [ref=e46] [cursor=pointer]:
+            - generic [aria-hidden] [ref=e47]: download
+            - text: Export Analytics
+          - link "New Event" [ref=e48] [cursor=pointer]:
+            - /url: "#event-config"
+            - generic [aria-hidden] [ref=e49]: add
+            - text: New Event
+      - generic [ref=e50]:
+        - generic [ref=e51]:
+          - generic [ref=e52]:
+            - generic [ref=e53]: Total Posts Generated
+            - generic [aria-hidden] [ref=e55]: auto_awesome
+          - generic [ref=e56]:
+            - generic [ref=e57]: "842"
+            - generic [ref=e58]:
+              - generic [aria-hidden] [ref=e59]: arrow_upward
+              - text: +24%
+          - generic [ref=e60]:
+            - generic [ref=e61]: vs. 680 yesterday
+            - generic [ref=e62]: Peak 2:30 PM
+        - generic [ref=e65]:
+          - generic [ref=e66]:
+            - generic [ref=e67]: LinkedIn Impressions Reach
+            - generic [aria-hidden] [ref=e69]: trending_up
+          - generic [ref=e70]:
+            - generic [ref=e71]: 128.4K
+            - generic [ref=e72]:
+              - generic [aria-hidden] [ref=e73]: arrow_upward
+              - text: +38%
+          - generic [ref=e74]:
+            - generic [ref=e75]: "Target: 100K reached"
+            - generic [ref=e76]: Goal Met
+        - generic [ref=e79]:
+          - generic [ref=e80]:
+            - generic [ref=e81]: Attendee Generator Visits
+            - generic [aria-hidden] [ref=e83]: groups
+          - generic [ref=e84]:
+            - generic [ref=e85]: 1,420
+            - generic [ref=e86]: 59.3% conv.
+          - generic [ref=e87]:
+            - generic [ref=e88]: From QR badges & slides
+            - generic [ref=e89]: 842 authors
+        - generic [ref=e92]:
+          - generic [ref=e93]:
+            - generic [ref=e94]: Top Tag Activity
+            - generic [aria-hidden] [ref=e96]: tag
+          - generic [ref=e97]: "#GoogleH2S"
+          - generic [ref=e99]:
+            - generic [ref=e100]: 92% of posts included
+            - generic [ref=e101]: Viral trend
+      - generic [ref=e104]:
+        - generic [ref=e105]:
+          - generic [ref=e106]:
+            - generic [ref=e107]:
+              - generic [ref=e108]:
+                - generic [aria-hidden] [ref=e109]: tune
+                - heading "Event Details & Social Configuration" [level=2] [ref=e110]
+              - paragraph [ref=e111]: Configure the parameters attendees will automatically see and inherit when generating their LinkedIn posts.
+            - generic [ref=e112]: Auto-Sync On
+          - generic [ref=e113]:
+            - generic [ref=e114]:
+              - generic [ref=e115]:
+                - generic [ref=e116]: Event Name
+                - textbox "Event Name" [ref=e117]:
+                  - /placeholder: e.g. NextGen AI Summit 2025
+                  - text: Google H2S Bootcamp 2025
+              - generic [ref=e118]:
+                - generic [ref=e119]: Organizer / Host Name
+                - textbox "Organizer / Host Name" [ref=e120]:
+                  - /placeholder: e.g. Acme Cloud Corp
+                  - text: Google for Developers
+            - generic [ref=e121]:
+              - generic [ref=e122]:
+                - generic [ref=e123]: Official Event Hashtags
+                - generic [ref=e124]: "Recommended: 3-5 tags"
+              - generic [ref=e125]:
+                - generic [ref=e126]:
+                  - text: "#GoogleH2S"
+                  - 'button "Remove #GoogleH2S" [ref=e127] [cursor=pointer]':
+                    - generic [aria-hidden] [ref=e128]: close
+                - generic [ref=e129]:
+                  - text: "#GoogleDevelopers"
+                  - 'button "Remove #GoogleDevelopers" [ref=e130] [cursor=pointer]':
+                    - generic [aria-hidden] [ref=e131]: close
+                - generic [ref=e132]:
+                  - text: "#TechBootcamp2025"
+                  - 'button "Remove #TechBootcamp2025" [ref=e133] [cursor=pointer]':
+                    - generic [aria-hidden] [ref=e134]: close
+                - generic [ref=e135]:
+                  - text: "#CloudSkills"
+                  - 'button "Remove #CloudSkills" [ref=e136] [cursor=pointer]':
+                    - generic [aria-hidden] [ref=e137]: close
+                - button "Add tag" [ref=e138] [cursor=pointer]:
+                  - generic [aria-hidden] [ref=e139]: add
+                  - text: Add tag
+            - generic [ref=e140]:
+              - generic [ref=e141]:
+                - generic [ref=e142]: LinkedIn Company / Page URL
+                - generic [ref=e143]:
+                  - generic [ref=e144]: in
+                  - textbox "LinkedIn Company / Page URL" [ref=e145]:
+                    - /placeholder: https://linkedin.com/company/your-brand
+                    - text: https://linkedin.com/company/google
+              - generic [ref=e146]:
+                - generic [ref=e147]:
+                  - generic [ref=e148]: X / Twitter URL or Handle
+                  - generic [ref=e149]:
+                    - generic [ref=e150]: 𝕏
+                    - textbox "X / Twitter URL or Handle" [ref=e151]:
+                      - /placeholder: https://x.com/yourhandle
+                      - text: https://x.com/GoogleDevs
+                - generic [ref=e152]:
+                  - generic [ref=e153]: Event Website / Landing Page
+                  - generic [ref=e154]:
+                    - generic [aria-hidden] [ref=e155]: link
+                    - textbox "Event Website / Landing Page" [ref=e156]:
+                      - /placeholder: https://your-event.com
+                      - text: https://developers.google.com/events/h2s-bootcamp
+            - generic [ref=e157]:
+              - generic [ref=e158]:
+                - generic [ref=e159]: AI Generation Guidance & Key Takeaways Hint
+                - generic [ref=e160]: Default context for attendees
+              - textbox "AI Generation Guidance & Key Takeaways Hint" [ref=e161]: Learned scalable cloud architecture, built with Gemini API, and collaborated with 200+ top engineering fellows.
+              - paragraph [ref=e162]:
+                - generic [aria-hidden] [ref=e163]: info
+                - text: Attendees can customize this, but our AI will inject these talking points into their initial drafted post.
+            - generic [ref=e164]:
+              - button "Reset Defaults" [ref=e165] [cursor=pointer]
+              - button "Save Changes" [ref=e167] [cursor=pointer]:
+                - generic [aria-hidden] [ref=e168]: save
+                - text: Save Changes
+        - generic [ref=e170]:
+          - generic [ref=e171]:
+            - img "Google H2S Bootcamp 2025" [ref=e172]
+            - generic [ref=e173]: Live Event Now
+            - generic [ref=e176]:
+              - heading "Google H2S Bootcamp 2025" [level=3] [ref=e177]
+              - paragraph [ref=e178]: Google for Developers · Mountain View Campus & Global Hybrid
+          - generic [ref=e179]:
+            - generic [ref=e180]:
+              - generic [ref=e181]: "#GoogleH2S"
+              - generic [ref=e182]: "#GoogleDevelopers"
+              - generic [ref=e183]: "#TechBootcamp2025"
+            - generic [ref=e184]:
+              - link "in Company Page" [ref=e185] [cursor=pointer]:
+                - /url: https://linkedin.com/company/google
+                - generic [ref=e186]: in
+                - text: Company Page
+                - generic [aria-hidden] [ref=e187]: arrow_outward
+              - link "𝕏 GoogleDevs" [ref=e188] [cursor=pointer]:
+                - /url: https://x.com/GoogleDevs
+                - generic [ref=e189]: 𝕏
+                - text: GoogleDevs
+                - generic [aria-hidden] [ref=e190]: arrow_outward
+              - link "Website" [ref=e191] [cursor=pointer]:
+                - /url: https://developers.google.com/events/h2s-bootcamp
+                - generic [aria-hidden] [ref=e192]: open_in_new
+                - text: Website
+            - generic [ref=e193]:
+              - generic [ref=e194]:
+                - text: "842"
+                - paragraph [ref=e195]: Posts published
+              - generic [ref=e196]:
+                - text: "142"
+                - paragraph [ref=e197]: Photos added
+              - generic [ref=e198]:
+                - generic [ref=e199]: 4.9/5
+                - paragraph [ref=e200]: Quality score
+            - generic [ref=e201]:
+              - generic [ref=e202]:
+                - generic [ref=e203]:
+                  - generic [aria-hidden] [ref=e204]: share
+                  - text: Attendee Shareable Portal Link
+                - generic [ref=e205]: Active Link
+              - generic [ref=e207]:
+                - textbox "Attendee portal link" [ref=e208]: http://localhost:3100/attendee/google-h2s-bootcamp-2025?e=eyJuYW1lIjoiR29vZ2xlIEgyUyBCb290Y2FtcCAyMDI1Iiwib3JnYW5pemVyIjoiR29vZ2xlIGZvciBEZXZlbG9wZXJzIiwiaGFzaHRhZ3MiOlsiI0dvb2dsZUgyUyIsIiNHb29nbGVEZXZlbG9wZXJzIiwiI1RlY2hCb290Y2FtcDIwMjUiLCIjQ2xvdWRTa2lsbHMiXSwibGlua2VkaW5VcmwiOiJodHRwczovL2xpbmtlZGluLmNvbS9jb21wYW55L2dvb2dsZSIsInR3aXR0ZXJVcmwiOiJodHRwczovL3guY29tL0dvb2dsZURldnMiLCJ3ZWJzaXRlVXJsIjoiaHR0cHM6Ly9kZXZlbG9wZXJzLmdvb2dsZS5jb20vZXZlbnRzL2gycy1ib290Y2FtcCIsImd1aWRhbmNlIjoiTGVhcm5lZCBzY2FsYWJsZSBjbG91ZCBhcmNoaXRlY3R1cmUsIGJ1aWx0IHdpdGggR2VtaW5pIEFQSSwgYW5kIGNvbGxhYm9yYXRlZCB3aXRoIDIwMCsgdG9wIGVuZ2luZWVyaW5nIGZlbGxvd3MuIiwibG9jYXRpb24iOiJNb3VudGFpbiBWaWV3IENhbXB1cyAmIEdsb2JhbCBIeWJyaWQiLCJkYXRlTGFiZWwiOiJNYXJjaCAyMDI1In0
+                - button "Copy" [ref=e209] [cursor=pointer]:
+                  - generic [aria-hidden] [ref=e210]: content_copy
+              - generic [ref=e212]:
+                - img "QR code for the attendee link" [ref=e213]
+                - generic [ref=e216]:
+                  - paragraph [ref=e217]: Display on presenter slides
+                  - button "Download QR for Slides / Badges" [ref=e218] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=e219]: qr_code_2
+                    - text: Download QR for Slides / Badges
+              - link "Preview Attendee Experience" [ref=e220] [cursor=pointer]:
+                - /url: /attendee/google-h2s-bootcamp-2025?e=eyJuYW1lIjoiR29vZ2xlIEgyUyBCb290Y2FtcCAyMDI1Iiwib3JnYW5pemVyIjoiR29vZ2xlIGZvciBEZXZlbG9wZXJzIiwiaGFzaHRhZ3MiOlsiI0dvb2dsZUgyUyIsIiNHb29nbGVEZXZlbG9wZXJzIiwiI1RlY2hCb290Y2FtcDIwMjUiLCIjQ2xvdWRTa2lsbHMiXSwibGlua2VkaW5VcmwiOiJodHRwczovL2xpbmtlZGluLmNvbS9jb21wYW55L2dvb2dsZSIsInR3aXR0ZXJVcmwiOiJodHRwczovL3guY29tL0dvb2dsZURldnMiLCJ3ZWJzaXRlVXJsIjoiaHR0cHM6Ly9kZXZlbG9wZXJzLmdvb2dsZS5jb20vZXZlbnRzL2gycy1ib290Y2FtcCIsImd1aWRhbmNlIjoiTGVhcm5lZCBzY2FsYWJsZSBjbG91ZCBhcmNoaXRlY3R1cmUsIGJ1aWx0IHdpdGggR2VtaW5pIEFQSSwgYW5kIGNvbGxhYm9yYXRlZCB3aXRoIDIwMCsgdG9wIGVuZ2luZWVyaW5nIGZlbGxvd3MuIiwibG9jYXRpb24iOiJNb3VudGFpbiBWaWV3IENhbXB1cyAmIEdsb2JhbCBIeWJyaWQiLCJkYXRlTGFiZWwiOiJNYXJjaCAyMDI1In0
+                - generic [aria-hidden] [ref=e222]: arrow_forward
+      - generic [ref=e223]:
+        - generic [ref=e224]:
+          - generic [ref=e225]:
+            - heading "Recent Community Posts Generated" [level=2] [ref=e226]
+            - paragraph [ref=e227]: Live feed of attendees creating and publishing their event takeaways to LinkedIn.
+          - generic [ref=e228]:
+            - generic [ref=e229]:
+              - searchbox "Search posts" [ref=e230]
+              - generic [aria-hidden] [ref=e231]: search
+            - button "Filter posts" [ref=e232] [cursor=pointer]:
+              - generic [aria-hidden] [ref=e233]: filter_list
+        - table [ref=e235]:
+          - rowgroup [ref=e236]:
+            - row [ref=e237]:
+              - columnheader "Attendee & Role" [ref=e238]
+              - columnheader "Generation Tone" [ref=e239]
+              - columnheader "Post Snippet" [ref=e240]
+              - columnheader "Status" [ref=e241]
+              - columnheader "Actions" [ref=e242]
+          - rowgroup [ref=e243]:
+            - row [ref=e244]:
+              - cell "MV Marcus Vance Cloud Fellow · 3 mins ago" [ref=e245]:
+                - generic [ref=e246]:
+                  - generic [ref=e247]: MV
+                  - generic [ref=e248]:
+                    - generic [ref=e249]: Marcus Vance
+                    - generic [ref=e250]: Cloud Fellow · 3 mins ago
+              - cell [ref=e251]:
+                - generic [ref=e252]:
+                  - generic [aria-hidden] [ref=e253]: lightbulb
+                  - text: Key Takeaways
+              - cell [ref=e254]:
+                - paragraph [ref=e256]: "Thrilled to finish day 3 of #GoogleH2S Bootcamp! Built our first Gemini-powered agent architecture with scalable Kubernetes pods..."
+              - cell "Published to LinkedIn" [ref=e257]
+              - cell [ref=e260]:
+                - generic [ref=e261]:
+                  - button "View Post Preview" [ref=e262] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=e263]: visibility
+                  - button "Copy Text" [ref=e264] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=e265]: content_copy
+            - row [ref=e266]:
+              - cell "PS Priya Sharma ML Engineer · 8 mins ago" [ref=e267]:
+                - generic [ref=e268]:
+                  - generic [ref=e269]: PS
+                  - generic [ref=e270]:
+                    - generic [ref=e271]: Priya Sharma
+                    - generic [ref=e272]: ML Engineer · 8 mins ago
+              - cell [ref=e273]:
+                - generic [ref=e274]:
+                  - generic [aria-hidden] [ref=e275]: psychology
+                  - text: Thought Leader
+              - cell [ref=e276]:
+                - paragraph [ref=e278]: "3 lessons on multi-modal latency from today's workshop at #GoogleDevelopers bootcamp. Big shoutout to our mentor squad!"
+              - cell "Published to LinkedIn" [ref=e279]
+              - cell [ref=e282]:
+                - generic [ref=e283]:
+                  - button "View Post Preview" [ref=e284] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=e285]: visibility
+                  - button "Copy Text" [ref=e286] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=e287]: content_copy
+            - row [ref=e288]:
+              - cell "DC David Chen Full Stack Dev · 14 mins ago" [ref=e289]:
+                - generic [ref=e290]:
+                  - generic [ref=e291]: DC
+                  - generic [ref=e292]:
+                    - generic [ref=e293]: David Chen
+                    - generic [ref=e294]: Full Stack Dev · 14 mins ago
+              - cell [ref=e295]:
+                - generic [ref=e296]:
+                  - generic [aria-hidden] [ref=e297]: celebration
+                  - text: Attendee Hype
+              - cell [ref=e298]:
+                - paragraph [ref=e300]: "Honored to be here in Mountain View for #GoogleH2S! Demoing our real-time translation app in under 1 hour. Let's build! 🚀"
+              - cell "Published to LinkedIn" [ref=e301]
+              - cell [ref=e304]:
+                - generic [ref=e305]:
+                  - button "View Post Preview" [ref=e306] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=e307]: visibility
+                  - button "Copy Text" [ref=e308] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=e309]: content_copy
+            - row [ref=e310]:
+              - cell "AL Aisha Larsson Data Scientist · 21 mins ago" [ref=e311]:
+                - generic [ref=e312]:
+                  - generic [ref=e313]: AL
+                  - generic [ref=e314]:
+                    - generic [ref=e315]: Aisha Larsson
+                    - generic [ref=e316]: Data Scientist · 21 mins ago
+              - cell [ref=e317]:
+                - generic [ref=e318]:
+                  - generic [aria-hidden] [ref=e319]: lightbulb
+                  - text: Key Takeaways
+              - cell [ref=e320]:
+                - paragraph [ref=e322]: "The future of enterprise analytics isn't just about faster queries, it's contextual memory. Key takeaway from the keynote at #CloudSkills..."
+              - cell "Draft Copied" [ref=e323]
+              - cell [ref=e326]:
+                - generic [ref=e327]:
+                  - button "View Post Preview" [ref=e328] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=e329]: visibility
+                  - button "Copy Text" [ref=e330] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=e331]: content_copy
+        - generic [ref=e332]:
+          - generic [ref=e333]: Showing 4 of 842 total posts generated for this event
+          - generic [ref=e334]:
+            - button "Previous" [disabled] [ref=e335]
+            - button "1" [ref=e336] [cursor=pointer]
+            - button "Next" [disabled] [ref=e337]
+  - contentinfo [ref=e338]:
+    - generic [ref=e339]:
+      - generic [ref=e340]:
+        - generic [ref=e341]: EventPulse
+        - generic [ref=e342]: © 2025 AI Post Suite. Professional Thought Leadership Engine.
+      - generic [ref=e343]:
+        - link "Privacy Policy" [ref=e344] [cursor=pointer]:
+          - /url: "#"
+        - link "Terms of Service" [ref=e345] [cursor=pointer]:
+          - /url: "#"
+        - link "Documentation" [ref=e346] [cursor=pointer]:
+          - /url: "#"
+  - alert [ref=e347]

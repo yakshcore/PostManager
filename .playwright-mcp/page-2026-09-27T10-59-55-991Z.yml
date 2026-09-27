@@ -1,0 +1,226 @@
+- generic [active] [ref=f1e1]:
+  - banner [ref=f1e2]:
+    - generic [ref=f1e3]:
+      - generic [ref=f1e4]:
+        - link [ref=f1e5] [cursor=pointer]:
+          - /url: /organizer
+          - img "EventPulse Brand Logo" [ref=f1e6]
+        - generic [ref=f1e7]: AI Post Suite
+      - navigation [ref=f1e8]:
+        - link "Organizer Dashboard" [ref=f1e9] [cursor=pointer]:
+          - /url: /organizer
+        - link "Attendee View" [ref=f1e10] [cursor=pointer]:
+          - /url: /attendee
+        - link "Post Generator" [ref=f1e11] [cursor=pointer]:
+          - /url: /attendee#create
+        - link "Analytics" [ref=f1e12] [cursor=pointer]:
+          - /url: /analytics
+      - generic [ref=f1e13]:
+        - link "Google H2S Bootcamp 2025" [ref=f1e14] [cursor=pointer]:
+          - /url: /organizer
+          - generic [aria-hidden] [ref=f1e17]: unfold_more
+        - button "Notifications" [ref=f1e18] [cursor=pointer]:
+          - generic [aria-hidden] [ref=f1e19]: notifications
+        - generic [ref=f1e22] [cursor=pointer]:
+          - img "Profile" [ref=f1e23]
+          - generic [ref=f1e24]:
+            - generic [ref=f1e25]: Sarah Lin
+            - generic [ref=f1e26]: Event Lead
+          - generic [aria-hidden] [ref=f1e27]: expand_more
+  - main [ref=f1e28]:
+    - generic [ref=f1e30]:
+      - generic [ref=f1e31]:
+        - generic [ref=f1e32]:
+          - generic [ref=f1e33]:
+            - generic [ref=f1e34]:
+              - generic [aria-hidden] [ref=f1e35]: verified
+              - text: Hosted by Google for Developers
+            - generic [ref=f1e36]:
+              - generic [aria-hidden] [ref=f1e37]: location_on
+              - text: Mountain View Campus & Global Hybrid
+            - generic [ref=f1e38]:
+              - generic [aria-hidden] [ref=f1e39]: calendar_today
+              - text: March 2025
+          - generic [ref=f1e40]:
+            - heading "Google H2S Bootcamp 2025" [level=1] [ref=f1e41]
+            - paragraph [ref=f1e42]: Turn your sprint achievements, hackathon builds, and mentor milestones into reach-amplifying LinkedIn content.
+          - generic [ref=f1e43]:
+            - generic [ref=f1e44]: "Official Tags:"
+            - generic [ref=f1e45] [cursor=pointer]: "#GoogleH2S"
+            - generic [ref=f1e46] [cursor=pointer]: "#GoogleDevelopers"
+            - generic [ref=f1e47] [cursor=pointer]: "#TechBootcamp2025"
+            - generic [ref=f1e48] [cursor=pointer]: "#CloudSkills"
+          - generic [ref=f1e49]:
+            - link "LinkedIn Page" [ref=f1e50] [cursor=pointer]:
+              - /url: https://linkedin.com/company/google
+              - generic [aria-hidden] [ref=f1e51]: share
+              - text: LinkedIn Page
+            - link "X / Twitter Feed" [ref=f1e52] [cursor=pointer]:
+              - /url: https://x.com/GoogleDevs
+              - generic [aria-hidden] [ref=f1e53]: tag
+              - text: X / Twitter Feed
+            - link "Event Hub" [ref=f1e54] [cursor=pointer]:
+              - /url: https://developers.google.com/events/h2s-bootcamp
+              - generic [aria-hidden] [ref=f1e55]: open_in_new
+              - text: Event Hub
+        - generic [ref=f1e56]:
+          - generic [ref=f1e57]: Attendee Authoring Portal
+          - link "Switch to Organizer Dashboard" [ref=f1e59] [cursor=pointer]:
+            - /url: /organizer
+            - generic [aria-hidden] [ref=f1e61]: arrow_forward
+      - generic [ref=f1e62]:
+        - generic [ref=f1e64]:
+          - generic [ref=f1e65]:
+            - generic [ref=f1e66]:
+              - generic [ref=f1e67]:
+                - generic [aria-hidden] [ref=f1e69]: auto_awesome
+                - heading "Create Your LinkedIn Post" [level=2] [ref=f1e70]
+              - paragraph [ref=f1e71]: Turn your bootcamp highlights into an engaging, professional story in seconds.
+            - generic [ref=f1e72]: Step 1 of 2
+          - generic [ref=f1e73]:
+            - generic [ref=f1e74]:
+              - generic [ref=f1e75]:
+                - generic [ref=f1e76]: Attached Media
+                - generic [ref=f1e77]: (2 of 4 selected)
+              - generic [ref=f1e78]: Supports JPG, PNG up to 15MB
+            - button "Choose File" [ref=f1e79]
+            - button [ref=f1e80] [cursor=pointer]:
+              - generic [aria-hidden] [ref=f1e82]: cloud_upload
+              - paragraph [ref=f1e83]: Drag & drop event photos here, or browse files
+              - paragraph [ref=f1e84]: High-resolution stage, team, or project photos boost reach by +47%
+            - generic [ref=f1e85]:
+              - generic [ref=f1e86]:
+                - img "hackathon_team.jpg" [ref=f1e87]
+                - generic: hackathon_team.jpg
+                - button "Remove hackathon_team.jpg" [ref=f1e88] [cursor=pointer]:
+                  - generic [aria-hidden] [ref=f1e89]: close
+              - generic [ref=f1e90]:
+                - img "bootcamp_certificate.jpg" [ref=f1e91]
+                - generic: bootcamp_certificate.jpg
+                - button "Remove bootcamp_certificate.jpg" [ref=f1e92] [cursor=pointer]:
+                  - generic [aria-hidden] [ref=f1e93]: close
+              - button "Add more" [ref=f1e94] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f1e95]: add_circle
+          - generic [ref=f1e97]:
+            - generic [ref=f1e98]:
+              - generic [ref=f1e99]: Select Tone of Voice
+              - generic [ref=f1e100]: Influences copy cadence & hooks
+            - radiogroup "Select Tone of Voice" [ref=f1e101]:
+              - radio "Professional Career-focused & polished" [ref=f1e102] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f1e103]: business_center
+                - generic [ref=f1e104]:
+                  - generic [ref=f1e105]: Professional
+                  - generic [ref=f1e107]: Career-focused & polished
+              - radio "Grateful Attendee Warm & mentor-honoring" [checked] [ref=f1e108] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f1e109]: favorite
+                - generic [ref=f1e110]:
+                  - generic [ref=f1e111]: Grateful Attendee
+                  - generic [ref=f1e114]: Warm & mentor-honoring
+              - radio "Key Takeaways Bulleted learning points" [ref=f1e115] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f1e116]: lightbulb
+                - generic [ref=f1e117]:
+                  - generic [ref=f1e118]: Key Takeaways
+                  - generic [ref=f1e120]: Bulleted learning points
+              - radio "Excited Student Milestone & high energy" [ref=f1e121] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f1e122]: rocket_launch
+                - generic [ref=f1e123]:
+                  - generic [ref=f1e124]: Excited Student
+                  - generic [ref=f1e126]: Milestone & high energy
+          - generic [ref=f1e127]:
+            - generic [ref=f1e128]:
+              - generic [ref=f1e129]: Key Highlights & What You Learned
+              - generic [ref=f1e130]: 296 chars
+            - textbox "Key Highlights & What You Learned" [ref=f1e132]:
+              - /placeholder: Mention key projects, teammates, mentors, or favorite moments...
+              - text: Completed intensive 5-day hackathon sprint! Built an autonomous research agent using Gemini 1.5 Pro and Google Cloud Run. Immense gratitude to our mentor Alex Rivera and the whole Google Developer team for the hands-on code reviews. Loved connecting with fellow engineers from across the country.
+            - generic [ref=f1e133]:
+              - generic [ref=f1e134]: "Quick prompts:"
+              - button "+ Mention mentors" [ref=f1e135] [cursor=pointer]
+              - button "+ Cloud architecture" [ref=f1e136] [cursor=pointer]
+              - button "+ Team collaboration" [ref=f1e137] [cursor=pointer]
+          - generic [ref=f1e138]:
+            - button "Generate LinkedIn Post with EventPulse AI" [ref=f1e139] [cursor=pointer]:
+              - generic [aria-hidden] [ref=f1e140]: auto_awesome
+            - generic [ref=f1e142]:
+              - generic [aria-hidden] [ref=f1e143]: check_circle
+              - generic [ref=f1e144]:
+                - text: "Automatically incorporates verified #GoogleH2S hashtags and tags"
+                - generic [ref=f1e145]: "@Google for Developers"
+                - text: .
+        - generic [ref=f1e146]:
+          - generic [ref=f1e147]:
+            - generic [ref=f1e148]:
+              - generic [ref=f1e149]: Live LinkedIn Post Preview
+              - generic [ref=f1e150]: Sample Preview
+            - group "Preview width" [ref=f1e152]:
+              - button "Mobile preview toggle" [ref=f1e153] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f1e154]: smartphone
+              - button "Desktop preview toggle" [pressed] [ref=f1e155] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f1e156]: desktop_windows
+          - generic [ref=f1e158]:
+            - generic [ref=f1e159]:
+              - generic [ref=f1e160]:
+                - img "Sarah Lin portrait" [ref=f1e162]
+                - generic [ref=f1e164]:
+                  - generic [ref=f1e165]:
+                    - generic [ref=f1e166]: Sarah Lin
+                    - generic [ref=f1e167]: • 1st
+                  - paragraph [ref=f1e168]: Software Engineer & AI Builder | Google H2S Bootcamp '25 Fellow | Prev. SWE Intern
+                  - generic [ref=f1e169]:
+                    - generic [ref=f1e170]: Just now
+                    - generic [ref=f1e171]: •
+                    - generic [aria-hidden] [ref=f1e172]: public
+              - button "More options" [ref=f1e174] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f1e175]: more_horiz
+            - generic [ref=f1e176]:
+              - paragraph [ref=f1e177]: Still processing what an incredible week it was at the Google H2S Bootcamp 🚀
+              - paragraph [ref=f1e178]: Over the past 5 days at Google Mountain View, I had the privilege to deep-dive into cutting-edge cloud infrastructure and build with Gemini 1.5 Pro. Our team architected an end-to-end multi-agent system deployed directly on Google Cloud Run.
+              - paragraph [ref=f1e179]: "3 big takeaways from this experience:💡 Modular Architecture: Scalability starts with clear agent communication boundaries.💡 Engineering Mentorship: Real-time code reviews from Google engineers shaved days off our debugging cycles.💡 Community Power: The talent and energy in this cohort was unmatched!"
+              - paragraph [ref=f1e180]: Huge thank you to @Google for Developers, our dedicated mentor Alex Rivera, and all the event organizers for putting together such an empowering experience.
+              - paragraph [ref=f1e181]: Excited for what's next! 💻✨
+              - paragraph [ref=f1e182]: "#GoogleH2S #GoogleDevelopers #GeminiSprint #TechBootcamp2025 #CloudSkills #WomenInTech"
+            - generic [ref=f1e183]:
+              - img "hackathon_team.jpg" [ref=f1e185]
+              - img "bootcamp_certificate.jpg" [ref=f1e187]
+            - generic [ref=f1e188]:
+              - generic [ref=f1e189]:
+                - generic [ref=f1e190]:
+                  - generic [ref=f1e191]: 👍
+                  - generic [ref=f1e192]: 💡
+                  - generic [ref=f1e193]: 👏
+                - generic [ref=f1e194]: "184"
+              - generic [ref=f1e195]:
+                - generic [ref=f1e196]: 42 comments
+                - generic [ref=f1e197]: •
+                - generic [ref=f1e198]: 12 reposts
+            - generic [ref=f1e200]:
+              - button "Like" [ref=f1e201] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f1e202]: thumb_up
+              - button "Comment" [ref=f1e204] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f1e205]: comment
+              - button "Repost" [ref=f1e207] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f1e208]: repeat
+              - button "Send" [ref=f1e210] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f1e211]: send
+          - generic [ref=f1e213]:
+            - generic [ref=f1e214]:
+              - button "Copy Text" [ref=f1e215] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f1e216]: content_copy
+              - button "Regenerate" [ref=f1e218] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f1e219]: sync
+            - link "Open in LinkedIn" [ref=f1e221] [cursor=pointer]:
+              - /url: https://www.linkedin.com/feed/?shareActive=true&text=Still%20processing%20what%20an%20incredible%20week%20it%20was%20at%20the%20Google%20H2S%20Bootcamp%20%F0%9F%9A%80%0A%0AOver%20the%20past%205%20days%20at%20Google%20Mountain%20View%2C%20I%20had%20the%20privilege%20to%20deep-dive%20into%20cutting-edge%20cloud%20infrastructure%20and%20build%20with%20Gemini%201.5%20Pro.%20Our%20team%20architected%20an%20end-to-end%20multi-agent%20system%20deployed%20directly%20on%20Google%20Cloud%20Run.%0A%0A3%20big%20takeaways%20from%20this%20experience%3A%0A%F0%9F%92%A1%20Modular%20Architecture%3A%20Scalability%20starts%20with%20clear%20agent%20communication%20boundaries.%0A%F0%9F%92%A1%20Engineering%20Mentorship%3A%20Real-time%20code%20reviews%20from%20Google%20engineers%20shaved%20days%20off%20our%20debugging%20cycles.%0A%F0%9F%92%A1%20Community%20Power%3A%20The%20talent%20and%20energy%20in%20this%20cohort%20was%20unmatched!%0A%0AHuge%20thank%20you%20to%20%40Google%20for%20Developers%2C%20our%20dedicated%20mentor%20Alex%20Rivera%2C%20and%20all%20the%20event%20organizers%20for%20putting%20together%20such%20an%20empowering%20experience.%0A%0AExcited%20for%20what's%20next!%20%F0%9F%92%BB%E2%9C%A8%0A%0A%23GoogleH2S%20%23GoogleDevelopers%20%23GeminiSprint%20%23TechBootcamp2025%20%23CloudSkills%20%23WomenInTech
+              - generic [aria-hidden] [ref=f1e223]: launch
+  - contentinfo [ref=f1e224]:
+    - generic [ref=f1e225]:
+      - generic [ref=f1e226]:
+        - generic [ref=f1e227]: EventPulse
+        - generic [ref=f1e228]: © 2025 AI Post Suite. Professional Thought Leadership Engine.
+      - generic [ref=f1e229]:
+        - link "Privacy Policy" [ref=f1e230] [cursor=pointer]:
+          - /url: "#"
+        - link "Terms of Service" [ref=f1e231] [cursor=pointer]:
+          - /url: "#"
+        - link "Documentation" [ref=f1e232] [cursor=pointer]:
+          - /url: "#"
+  - alert [ref=f1e233]
