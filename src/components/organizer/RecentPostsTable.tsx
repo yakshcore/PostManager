@@ -8,6 +8,7 @@ import { PostText } from "@/components/post/PostText";
 import { LinkedInPostPreview } from "@/components/post/LinkedInPostPreview";
 import { useCopyToClipboard } from "@/hooks/useCopyToClipboard";
 import { relativeTime } from "@/lib/sample-data";
+import { initials, initialsAvatar } from "@/lib/avatar";
 import type { CommunityPost } from "@/lib/types";
 
 const PAGE_SIZE = 4;
@@ -24,17 +25,16 @@ const STATUS: Record<CommunityPost["status"], { label: string; pill: string; dot
   draft: { label: "Generated", pill: "bg-surface-container text-on-surface-variant", dot: "bg-outline" },
 };
 
-function initials(name: string) {
-  return name.split(/\s+/).map((w) => w[0]).join("").slice(0, 2).toUpperCase();
-}
 
 interface RecentPostsTableProps {
   posts: CommunityPost[];
   totalCount: number;
   organizer: string;
+  loading?: boolean;
+  error?: string | null;
 }
 
-export function RecentPostsTable({ posts, totalCount, organizer }: RecentPostsTableProps) {
+export function RecentPostsTable({ posts, totalCount, organizer, loading, error }: RecentPostsTableProps) {
   const [query, setQuery] = useState("");
   const [page, setPage] = useState(1);
   const [viewing, setViewing] = useState<CommunityPost | null>(null);
@@ -147,7 +147,15 @@ export function RecentPostsTable({ posts, totalCount, organizer }: RecentPostsTa
             {rows.length === 0 && (
               <tr>
                 <td colSpan={5} className="py-10 text-center text-on-surface-variant font-body-md text-body-md">
-                  No posts match “{query}”.
+                  {error ? (
+                    <span className="text-error">{error}</span>
+                  ) : loading ? (
+                    "Loading posts…"
+                  ) : query ? (
+                    <>No posts match “{query}”.</>
+                  ) : (
+                    "No posts yet — share the attendee link or QR code to get the first ones."
+                  )}
                 </td>
               </tr>
             )}
@@ -184,7 +192,7 @@ export function RecentPostsTable({ posts, totalCount, organizer }: RecentPostsTa
         <Modal title="Post Preview" onClose={() => setViewing(null)}>
           <LinkedInPostPreview
             compact
-            author={{ name: viewing.name, headline: viewing.role, avatar: `data:image/svg+xml,${encodeURIComponent(avatarSvg(initials(viewing.name)))}` }}
+            author={{ name: viewing.name, headline: viewing.role, avatar: initialsAvatar(viewing.name) }}
             text={viewing.text}
             images={[]}
             mention={organizer}
@@ -193,8 +201,4 @@ export function RecentPostsTable({ posts, totalCount, organizer }: RecentPostsTa
       )}
     </section>
   );
-}
-
-function avatarSvg(letters: string) {
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><rect width="48" height="48" fill="#d6e3ff"/><text x="24" y="30" text-anchor="middle" font-family="Inter,sans-serif" font-size="17" font-weight="600" fill="#004e99">${letters}</text></svg>`;
 }

@@ -12,6 +12,14 @@ export interface EventConfig {
   dateLabel: string;
 }
 
+/** An event as stored in Firestore (`events/{id}`). */
+export interface EventRecord extends EventConfig {
+  id: string;
+  ownerUid: string;
+  visits: number;
+  createdAt: number;
+}
+
 export interface GenerateRequest {
   tone: ToneId;
   highlights: string;
@@ -43,4 +51,5 @@ export interface CommunityPost {
   tone: ToneId | "thought-leader" | "hype";
   text: string;
   status: "published" | "copied" | "draft";
+  imageCount: number;
 }

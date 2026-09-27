@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Icon } from "@/components/ui/Icon";
 import { EventBanner } from "./EventBanner";
 import { PhotoUploader } from "./PhotoUploader";
@@ -9,25 +9,48 @@ import { HighlightsInput } from "./HighlightsInput";
 import { PostPreviewPanel } from "./PostPreviewPanel";
 import { usePhotoUploads } from "@/hooks/usePhotoUploads";
 import { useGeneratePost, useModelInfo } from "@/hooks/useGeneratePost";
-import { useCommunityPosts } from "@/hooks/useCommunityPosts";
+import { ensureSignedIn } from "@/lib/firebase/auth";
+import { createPost, setPostStatus } from "@/lib/firebase/posts";
+import { initialsAvatar } from "@/lib/avatar";
 import { SAMPLE_HIGHLIGHTS, SAMPLE_PHOTOS, SAMPLE_POST } from "@/lib/sample-data";
-import type { EventConfig, ToneId } from "@/lib/types";
+import type { EventRecord, ToneId } from "@/lib/types";
 
-// The signed-in attendee profile from the Stitch design; replace with real auth when available.
-const AUTHOR = {
-  name: "Sarah Lin",
-  headline: "Software Engineer & AI Builder | Google H2S Bootcamp '25 Fellow | Prev. SWE Intern",
-  avatar: "/stitch/avatar.jpg",
-};
+const PROFILE_KEY = "postmanager:profile";
+const FIELD =
+  "w-full px-3.5 py-2.5 rounded-xl bg-surface-container-low text-on-surface font-body-md text-body-md outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary transition-all placeholder:text-outline";
 
-export function AttendeeGenerator({ event }: { event: EventConfig }) {
+/** Attendee's name/headline, remembered in this browser for next time. */
+function useProfile() {
+  const [profile, setProfile] = useState({ name: "", headline: "" });
+  useEffect(() => {
+    try {
+      const saved = JSON.parse(localStorage.getItem(PROFILE_KEY) ?? "null");
+      if (saved?.name !== undefined) setProfile({ name: String(saved.name), headline: String(saved.headline ?? "") });
+    } catch {}
+  }, []);
+  const update = (next: typeof profile) => {
+    setProfile(next);
+    try {
+      localStorage.setItem(PROFILE_KEY, JSON.stringify(next));
+    } catch {}
+  };
+  return [profile, update] as const;
+}
+
+export function AttendeeGenerator({ event }: { event: EventRecord }) {
   const [tone, setTone] = useState<ToneId>("grateful");
   const [highlights, setHighlights] = useState(SAMPLE_HIGHLIGHTS);
   const { photos, addFiles, remove, error: photoError } = usePhotoUploads(SAMPLE_PHOTOS);
   const { status, post, error, meta, generate, cancel } = useGeneratePost();
   const modelInfo = useModelInfo();
-  const community = useCommunityPosts();
+  const [profile, setProfile] = useProfile();
   const [postId, setPostId] = useState<string | null>(null);
+  const [saveWarning, setSaveWarning] = useState<string | null>(null);
+  const author = {
+    name: profile.name.trim() || "Your Name",
+    headline: profile.headline.trim() || `Attendee at ${event.name}`,
+    avatar: initialsAvatar(profile.name.trim() || "?"),
+  };
   const previewRef = useRef<HTMLDivElement>(null);
 
   const loading = status === "loading";
@@ -37,9 +60,21 @@ export function AttendeeGenerator({ event }: { event: EventConfig }) {
   const run = async (regenerate: boolean) => {
     const text = await generate({ tone, highlights, event, photos }, { regenerate });
     if (!text) return;
-    const id = crypto.randomUUID();
-    setPostId(id);
-    community.add({ id, name: AUTHOR.name, role: "Software Engineer", createdAt: Date.now(), tone, text, status: "draft" });
+    // Save to the organizer's live feed. Generation already succeeded, so a failed save is only a warning.
+    setSaveWarning(null);
+    ensureSignedIn()
+      .then((user) =>
+        createPost(event.id, {
+          authorUid: user.uid,
+          name: profile.name.trim() || "Anonymous attendee",
+          role: profile.headline.trim() || "Attendee",
+          tone,
+          text,
+          imageCount: photos.length,
+        }),
+      )
+      .then(setPostId)
+      .catch(() => setSaveWarning("Your post is ready, but it couldn't be shared with the organizer's feed."));
     // On stacked (mobile/tablet) layouts, bring the result into view.
     if (window.matchMedia("(max-width: 1023px)").matches) {
       previewRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -68,6 +103,19 @@ export function AttendeeGenerator({ event }: { event: EventConfig }) {
               <span className="px-2.5 py-1 rounded-md bg-surface-container text-primary font-label-sm text-label-sm font-semibold uppercase shrink-0">
                 Step {post ? 2 : 1} of 2
               </span>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="space-y-1.5">
+                <label className="block font-label-lg text-label-lg text-on-surface font-semibold" htmlFor="author-name">Your Name</label>
+                <input id="author-name" className={FIELD} placeholder="e.g. Sarah Lin" maxLength={80} autoComplete="name"
+                  value={profile.name} onChange={(e) => setProfile({ ...profile, name: e.target.value })} />
+              </div>
+              <div className="space-y-1.5">
+                <label className="block font-label-lg text-label-lg text-on-surface font-semibold" htmlFor="author-headline">Headline</label>
+                <input id="author-headline" className={FIELD} placeholder="e.g. Software Engineer & AI Builder" maxLength={160}
+                  value={profile.headline} onChange={(e) => setProfile({ ...profile, headline: e.target.value })} />
+              </div>
             </div>
 
             <PhotoUploader
@@ -111,6 +159,12 @@ export function AttendeeGenerator({ event }: { event: EventConfig }) {
                   </button>
                 </div>
               )}
+              {saveWarning && (
+                <p className="font-body-sm text-body-sm text-on-surface-variant text-center flex items-center justify-center gap-1">
+                  <Icon name="cloud_off" className="text-[16px]" />
+                  {saveWarning}
+                </p>
+              )}
               {notConfigured && (
                 <p className="font-body-sm text-body-sm text-error text-center">GROQ_API_KEY is not configured on the server.</p>
               )}
@@ -129,7 +183,7 @@ export function AttendeeGenerator({ event }: { event: EventConfig }) {
 
         <PostPreviewPanel
           ref={previewRef}
-          author={AUTHOR}
+          author={author}
           text={post ?? SAMPLE_POST}
           isSample={!post}
           status={status}
@@ -137,8 +191,8 @@ export function AttendeeGenerator({ event }: { event: EventConfig }) {
           mention={event.organizer}
           modelLabel={meta ? `${meta.model}${meta.imagesUsed ? " (with photo analysis)" : ""}` : null}
           onRegenerate={() => run(true)}
-          onCopied={() => postId && community.markCopied(postId)}
-          onOpenLinkedIn={() => postId && community.markPublished(postId)}
+          onCopied={() => postId && setPostStatus(event.id, postId, "copied").catch(() => {})}
+          onOpenLinkedIn={() => postId && setPostStatus(event.id, postId, "published").catch(() => {})}
         />
       </div>
     </div>

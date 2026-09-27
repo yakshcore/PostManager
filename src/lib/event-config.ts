@@ -13,29 +13,9 @@ export const DEFAULT_EVENT: EventConfig = {
   dateLabel: "March 2025",
 };
 
-export const STORAGE_KEY = "postmanager:event";
-
 export function normalizeHashtag(raw: string): string | null {
   const tag = raw.trim().replace(/^#+/, "").replace(/[^\p{L}\p{N}_]/gu, "");
   return tag ? `#${tag}` : null;
-}
-
-/** Event config travels inside the attendee link so it works on any device without a backend. */
-export function encodeEvent(event: EventConfig): string {
-  const bytes = new TextEncoder().encode(JSON.stringify(event));
-  let bin = "";
-  bytes.forEach((b) => (bin += String.fromCharCode(b)));
-  return btoa(bin).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
-}
-
-export function decodeEvent(encoded: string): EventConfig | null {
-  try {
-    const bin = atob(encoded.replace(/-/g, "+").replace(/_/g, "/"));
-    const bytes = Uint8Array.from(bin, (c) => c.charCodeAt(0));
-    return sanitizeEvent(JSON.parse(new TextDecoder().decode(bytes)));
-  } catch {
-    return null;
-  }
 }
 
 export function sanitizeEvent(input: unknown): EventConfig | null {

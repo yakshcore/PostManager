@@ -1,0 +1,90 @@
+rules_version = '2';
+
+// PostManager data model
+//   events/{eventId}                 — owned by an email/password organizer; publicly readable (attendee links)
+//   events/{eventId}/posts/{postId}  — written by attendees (anonymous auth); readable by the event owner and the author
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isEmailUser() {
+      return signedIn() && request.auth.token.firebase.sign_in_provider == 'password';
+    }
+
+    function str(v, max) {
+      return v is string && v.size() <= max;
+    }
+
+    function validEventFields(d) {
+      return d.keys().hasOnly(['name', 'organizer', 'hashtags', 'linkedinUrl', 'twitterUrl', 'websiteUrl',
+                               'guidance', 'location', 'dateLabel', 'ownerUid', 'visits', 'createdAt', 'updatedAt'])
+        && str(d.name, 120) && d.name.size() > 0
+        && str(d.organizer, 120) && d.organizer.size() > 0
+        && d.hashtags is list && d.hashtags.size() <= 10
+        && str(d.linkedinUrl, 300) && str(d.twitterUrl, 300) && str(d.websiteUrl, 300)
+        && str(d.guidance, 1000) && str(d.location, 120) && str(d.dateLabel, 60)
+        && d.visits is int
+        && d.updatedAt == request.time;
+    }
+
+    match /events/{eventId} {
+      allow read: if true;
+
+      allow create: if isEmailUser()
+        && request.resource.data.ownerUid == request.auth.uid
+        && request.resource.data.visits == 0
+        && request.resource.data.createdAt == request.time
+        && validEventFields(request.resource.data);
+
+      // Owner edits settings (ownership, creation time and visit count are immutable here),
+      // or any signed-in visitor bumps the visit counter by exactly one.
+      allow update: if (
+          isEmailUser()
+          && resource.data.ownerUid == request.auth.uid
+          && request.resource.data.ownerUid == resource.data.ownerUid
+          && request.resource.data.createdAt == resource.data.createdAt
+          && request.resource.data.visits == resource.data.visits
+          && validEventFields(request.resource.data)
+        ) || (
+          signedIn()
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['visits'])
+          && request.resource.data.visits == resource.data.visits + 1
+        );
+
+      allow delete: if isEmailUser() && resource.data.ownerUid == request.auth.uid;
+
+      function isEventOwner() {
+        return signedIn()
+          && get(/databases/$(database)/documents/events/$(eventId)).data.ownerUid == request.auth.uid;
+      }
+
+      match /posts/{postId} {
+        allow read: if isEventOwner() || (signedIn() && resource.data.authorUid == request.auth.uid);
+
+        allow create: if signedIn()
+          && exists(/databases/$(database)/documents/events/$(eventId))
+          && request.resource.data.keys().hasOnly(['authorUid', 'name', 'role', 'tone', 'text', 'status', 'imageCount', 'createdAt'])
+          && request.resource.data.authorUid == request.auth.uid
+          && str(request.resource.data.name, 80)
+          && str(request.resource.data.role, 160)
+          && request.resource.data.tone in ['professional', 'grateful', 'takeaways', 'excited']
+          && str(request.resource.data.text, 6000) && request.resource.data.text.size() > 0
+          && request.resource.data.status == 'draft'
+          && request.resource.data.imageCount is int
+          && request.resource.data.imageCount >= 0 && request.resource.data.imageCount <= 4
+          && request.resource.data.createdAt == request.time;
+
+        // Authors can only advance the status (copied / published).
+        allow update: if signedIn()
+          && resource.data.authorUid == request.auth.uid
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status'])
+          && request.resource.data.status in ['copied', 'published'];
+
+        allow delete: if isEventOwner();
+      }
+    }
+  }
+}

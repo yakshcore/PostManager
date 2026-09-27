@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { AppHeader } from "@/components/layout/AppHeader";
 import { AppFooter } from "@/components/layout/AppFooter";
+import { FirebaseAnalytics } from "@/components/layout/FirebaseAnalytics";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -30,6 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6">{children}</div>
         </main>
         <AppFooter />
+        <FirebaseAnalytics />
       </body>
     </html>
   );

@@ -1,49 +1,6 @@
-import type { CommunityPost } from "./types";
-
-/** Sample content from the Stitch designs. Shown until real data exists. */
+/** Sample content from the Stitch designs, shown until the attendee generates their own post. */
 
 const MIN = 60_000;
-
-export function sampleCommunityPosts(now: number): CommunityPost[] {
-  return [
-    {
-      id: "sample-1",
-      name: "Marcus Vance",
-      role: "Cloud Fellow",
-      createdAt: now - 3 * MIN,
-      tone: "takeaways",
-      text: "Thrilled to finish day 3 of #GoogleH2S Bootcamp! Built our first Gemini-powered agent architecture with scalable Kubernetes pods...",
-      status: "published",
-    },
-    {
-      id: "sample-2",
-      name: "Priya Sharma",
-      role: "ML Engineer",
-      createdAt: now - 8 * MIN,
-      tone: "thought-leader",
-      text: "3 lessons on multi-modal latency from today's workshop at #GoogleDevelopers bootcamp. Big shoutout to our mentor squad!",
-      status: "published",
-    },
-    {
-      id: "sample-3",
-      name: "David Chen",
-      role: "Full Stack Dev",
-      createdAt: now - 14 * MIN,
-      tone: "hype",
-      text: "Honored to be here in Mountain View for #GoogleH2S! Demoing our real-time translation app in under 1 hour. Let's build! 🚀",
-      status: "published",
-    },
-    {
-      id: "sample-4",
-      name: "Aisha Larsson",
-      role: "Data Scientist",
-      createdAt: now - 21 * MIN,
-      tone: "takeaways",
-      text: "The future of enterprise analytics isn't just about faster queries, it's contextual memory. Key takeaway from the keynote at #CloudSkills...",
-      status: "copied",
-    },
-  ];
-}
 
 export const SAMPLE_POST = `Still processing what an incredible week it was at the Google H2S Bootcamp 🚀
 

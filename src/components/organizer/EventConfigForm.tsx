@@ -8,7 +8,12 @@ import type { EventConfig } from "@/lib/types";
 
 interface EventConfigFormProps {
   saved: EventConfig;
-  onSave: (next: EventConfig) => void;
+  onSave: (next: EventConfig) => Promise<void>;
+}
+
+function configKey(c: EventConfig) {
+  const { name, organizer, hashtags, linkedinUrl, twitterUrl, websiteUrl, guidance, location, dateLabel } = c;
+  return JSON.stringify([name, organizer, hashtags, linkedinUrl, twitterUrl, websiteUrl, guidance, location, dateLabel]);
 }
 
 const INPUT =
@@ -25,15 +30,18 @@ function isUrlOrEmpty(v: string) {
 }
 
 export function EventConfigForm({ saved, onSave }: EventConfigFormProps) {
-  const [base, setBase] = useState(saved);
+  const [baseKey, setBaseKey] = useState(() => configKey(saved));
   const [draft, setDraft] = useState(saved);
   const [saving, setSaving] = useState(false);
   const [justSaved, setJustSaved] = useState(false);
+  const [saveError, setSaveError] = useState<string | null>(null);
   const [errors, setErrors] = useState<Partial<Record<keyof EventConfig, string>>>({});
 
-  // Re-sync when the stored config changes (hydration or another tab).
-  if (saved !== base) {
-    setBase(saved);
+  // Re-sync only when the stored settings actually change (another tab/device), not on every
+  // snapshot — live updates like visit counts must not wipe in-progress edits.
+  const savedKey = configKey(saved);
+  if (savedKey !== baseKey) {
+    setBaseKey(savedKey);
     setDraft(saved);
   }
 
@@ -43,7 +51,7 @@ export function EventConfigForm({ saved, onSave }: EventConfigFormProps) {
     return () => clearTimeout(t);
   }, [justSaved]);
 
-  const dirty = JSON.stringify(draft) !== JSON.stringify(saved);
+  const dirty = configKey(draft) !== savedKey;
   const set = <K extends keyof EventConfig>(k: K, v: EventConfig[K]) => setDraft((d) => ({ ...d, [k]: v }));
 
   const submit = (e?: FormEvent) => {
@@ -57,12 +65,11 @@ export function EventConfigForm({ saved, onSave }: EventConfigFormProps) {
     if (Object.keys(next).length) return;
 
     setSaving(true);
-    // Brief delay mirrors the Stitch save feedback so the state change is visible.
-    setTimeout(() => {
-      onSave({ ...draft, name: draft.name.trim(), organizer: draft.organizer.trim() });
-      setSaving(false);
-      setJustSaved(true);
-    }, 400);
+    setSaveError(null);
+    onSave({ ...draft, name: draft.name.trim(), organizer: draft.organizer.trim() })
+      .then(() => setJustSaved(true))
+      .catch(() => setSaveError("Couldn't save. Check your connection and try again."))
+      .finally(() => setSaving(false));
   };
 
   const err = (k: keyof EventConfig) =>
@@ -163,6 +170,12 @@ export function EventConfigForm({ saved, onSave }: EventConfigFormProps) {
             Reset Defaults
           </button>
           <div className="flex items-center gap-3">
+            {saveError && (
+              <span className="text-error font-label-md text-label-md flex items-center gap-1" role="alert">
+                <Icon name="error" className="text-[16px]" />
+                {saveError}
+              </span>
+            )}
             {justSaved && !dirty && (
               <span className="text-tertiary font-label-md text-label-md flex items-center gap-1" role="status">
                 <Icon name="check_circle" className="text-[16px]" />

@@ -2,20 +2,23 @@
 
 import { Icon } from "@/components/ui/Icon";
 import { AttendeeLinkCard } from "./AttendeeLinkCard";
-import { useAttendeeLink } from "@/hooks/useAttendeeLink";
+import { useSyncExternalStore } from "react";
 import { twitterHandle, twitterHref } from "@/lib/event-config";
-import type { EventConfig } from "@/lib/types";
+import type { EventRecord } from "@/lib/types";
 
 const SHORTCUT =
   "inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-variant font-label-md text-label-md transition-colors";
 
 interface LiveEventCardProps {
-  event: EventConfig;
-  postCount: number;
+  event: EventRecord;
+  stats: { published: number; photos: number; visits: number };
 }
 
-export function LiveEventCard({ event, postCount }: LiveEventCardProps) {
-  const link = useAttendeeLink(event);
+const noop = () => () => {};
+
+export function LiveEventCard({ event, stats }: LiveEventCardProps) {
+  const origin = useSyncExternalStore(noop, () => window.location.origin, () => "");
+  const link = `${origin}/attendee/${event.id}`;
 
   return (
     <div className="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
@@ -73,18 +76,16 @@ export function LiveEventCard({ event, postCount }: LiveEventCardProps) {
         </div>
         <div className="grid grid-cols-3 gap-2 p-3.5 rounded-xl bg-surface-container-low text-center">
           <div className="space-y-0.5">
-            <span className="font-headline-sm text-headline-sm text-primary-container font-bold">{postCount}</span>
+            <span className="font-headline-sm text-headline-sm text-primary-container font-bold">{stats.published}</span>
             <p className="font-body-sm text-body-sm text-on-surface-variant">Posts published</p>
           </div>
           <div className="space-y-0.5">
-            <span className="font-headline-sm text-headline-sm text-on-surface font-bold">142</span>
+            <span className="font-headline-sm text-headline-sm text-on-surface font-bold">{stats.photos}</span>
             <p className="font-body-sm text-body-sm text-on-surface-variant">Photos added</p>
           </div>
           <div className="space-y-0.5">
-            <span className="font-headline-sm text-headline-sm text-tertiary font-bold">
-              4.9<span className="text-label-sm font-medium">/5</span>
-            </span>
-            <p className="font-body-sm text-body-sm text-on-surface-variant">Quality score</p>
+            <span className="font-headline-sm text-headline-sm text-tertiary font-bold">{stats.visits}</span>
+            <p className="font-body-sm text-body-sm text-on-surface-variant">Portal visits</p>
           </div>
         </div>
         <AttendeeLinkCard link={link} eventName={event.name} />

@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Icon } from "@/components/ui/Icon";
-import { useEventConfig } from "@/hooks/useEventConfig";
+import { useHeaderEvent } from "@/hooks/useHeaderEvent";
+import { UserMenu } from "./UserMenu";
 
 const NAV = [
   { href: "/organizer", label: "Organizer Dashboard", match: "/organizer" },
@@ -18,7 +19,7 @@ const IDLE =
 
 export function AppHeader() {
   const pathname = usePathname();
-  const [event] = useEventConfig();
+  const event = useHeaderEvent();
 
   return (
     <header className="sticky top-0 z-50 w-full bg-surface-container-lowest border-b border-outline-variant/50">
@@ -47,6 +48,7 @@ export function AppHeader() {
           })}
         </nav>
         <div className="flex items-center gap-3 shrink-0">
+          {event && (
           <Link
             href="/organizer"
             className="hidden md:flex lg:hidden xl:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container-low border border-outline-variant/60 cursor-pointer hover:bg-surface-container transition-colors"
@@ -57,6 +59,7 @@ export function AppHeader() {
             </span>
             <Icon name="unfold_more" className="text-on-surface-variant text-[18px]" />
           </Link>
+          )}
           <button
             className="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors"
             type="button"
@@ -66,14 +69,7 @@ export function AppHeader() {
             <span className="absolute top-2 right-2 w-2 h-2 rounded-full bg-error ring-2 ring-surface-container-lowest" />
           </button>
           <div className="h-6 w-px bg-outline-variant/60 hidden sm:block" />
-          <div className="flex items-center gap-2.5 pl-1 cursor-pointer group">
-            <img alt="Profile" className="w-8 h-8 rounded-full object-cover ring-1 ring-outline-variant/40" src="/stitch/avatar.jpg" />
-            <div className="hidden xl:flex flex-col text-left">
-              <span className="font-label-md text-label-md text-on-surface font-semibold leading-tight">Sarah Lin</span>
-              <span className="font-label-sm text-label-sm text-on-surface-variant leading-tight">Event Lead</span>
-            </div>
-            <Icon name="expand_more" className="text-on-surface-variant text-[18px] group-hover:text-on-surface transition-colors" />
-          </div>
+          <UserMenu />
         </div>
       </div>
       {/* Mobile nav: the full tab bar only fits from lg up, so they move to a scrollable row here. */}
