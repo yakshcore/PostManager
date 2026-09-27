@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"tertiary-container":"#057642","secondary-fixed-dim":"#a9c7ff","outline":"#727783","surface-container-highest":"#dae2fd","on-tertiary":"#ffffff","on-error":"#ffffff","on-primary-fixed-variant":"#00468a","on-surface":"#131b2e","surface-container-lowest":"#ffffff","inverse-on-surface":"#eef0ff","surface-bright":"#faf8ff","on-surface-variant":"#414752","error":"#ba1a1a","primary-fixed-dim":"#a8c8ff","on-tertiary-fixed":"#00210e","inverse-primary":"#a8c8ff","surface-container":"#eaedff","on-secondary-container":"#0d4788","on-primary-container":"#dbe6ff","secondary-container":"#8cb7ff","error-container":"#ffdad6","surface-dim":"#d2d9f4","on-tertiary-container":"#9afab9","on-tertiary-fixed-variant":"#00522c","tertiary-fixed-dim":"#7cda9b","surface":"#faf8ff","inverse-surface":"#283044","primary":"#004e99","secondary":"#2f5ea1","surface-variant":"#dae2fd","on-error-container":"#93000a","on-secondary-fixed":"#001b3d","on-secondary":"#ffffff","tertiary-fixed":"#97f7b6","primary-container":"#0a66c2","on-primary-fixed":"#001b3d","surface-container-low":"#f2f3ff","background":"#faf8ff","on-background":"#131b2e","tertiary":"#005b31","outline-variant":"#c1c6d4","on-primary":"#ffffff","primary-fixed":"#d6e3ff","surface-tint":"#005eb5","on-secondary-fixed-variant":"#0c4687","surface-container-high":"#e2e7ff"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{gutter:"1.5rem","space-xs":"0.25rem","space-sm":"0.5rem","gutter-mobile":"1rem",margin:"2rem","margin-mobile":"1rem","space-md":"1rem","space-lg":"1.5rem","space-xl":"2rem"},fontFamily:{"body-md":["Inter"],"label-sm":["Inter"],display:["Inter"],"headline-md":["Inter"],"headline-lg":["Inter"],"headline-lg-mobile":["Inter"],"headline-sm":["Inter"],"body-lg":["Inter"],"label-lg":["Inter"],"body-sm":["Inter"],"label-md":["Inter"]},fontSize:{"body-md":["14px",{lineHeight:"20px",letterSpacing:"0em",fontWeight:"400"}],"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.02em",fontWeight:"600"}],display:["36px",{lineHeight:"44px",letterSpacing:"-0.025em",fontWeight:"700"}],"headline-md":["22px",{lineHeight:"28px",letterSpacing:"-0.015em",fontWeight:"600"}],"headline-lg":["30px",{lineHeight:"38px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-lg-mobile":["24px",{lineHeight:"32px",letterSpacing:"-0.015em",fontWeight:"700"}],"headline-sm":["18px",{lineHeight:"24px",letterSpacing:"-0.01em",fontWeight:"600"}],"body-lg":["16px",{lineHeight:"24px",letterSpacing:"-0.005em",fontWeight:"400"}],"label-lg":["14px",{lineHeight:"20px",letterSpacing:"-0.005em",fontWeight:"600"}],"body-sm":["12px",{lineHeight:"16px",letterSpacing:"0em",fontWeight:"400"}],"label-md":["13px",{lineHeight:"18px",letterSpacing:"0.005em",fontWeight:"500"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface min-h-screen"><header class="sticky top-0 z-50 w-full bg-surface-container-lowest border-b border-outline-variant/50"><div class="h-16 w-full px-6 flex items-center justify-between gap-4"><div class="flex items-center gap-3 shrink-0"><a class="flex items-center gap-2.5" data-path="organizer-dashboard" href="#"><img alt="EventPulse Brand Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Xh1FwY4q6qUg3fUYpiOz-1PIO0Vei6xijmYtBblM_UA6nXRgVbnVfya7QPXBAUMhayf3-o8R7zVZ7Qnk9zawr7480vLapdr3c2rx_N_SrtDDsG_iTw3kheMgDeKx27CCJaJpbu5xBgXAijt7y3f8PTYy7LzK34SdsJA3sqUbtuc-UWnQV8Oa-vHwNrfT-iouPnmtBimiSo_S3pJ_l5QFtB4XHw9CWdFXAAXXhXkbqG1Us7hJ5IV170pVs"/><span class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">EventPulse</span></a><span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">AI Post Suite</span></div><nav class="hidden md:flex items-center h-full space-x-1 shrink-0" data-active-classes="text-on-surface border-b-2 border-primary-container font-semibold"><a class="h-full flex items-center px-4 font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors border-b-2 border-transparent" data-path="organizer-dashboard" href="#">Organizer Dashboard</a><a aria-current="page" class="h-full flex items-center px-4 transition-colors text-on-surface border-b-2 border-primary-container font-semibold" data-path="attendee-view" href="#">Attendee View</a><a class="h-full flex items-center px-4 font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors border-b-2 border-transparent" data-path="content-generator" href="#">Post Generator</a><a class="h-full flex items-center px-4 font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors border-b-2 border-transparent" data-path="analytics" href="#">Analytics</a></nav><div class="flex items-center gap-3 shrink-0"><div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container-low border border-outline-variant/60 cursor-pointer hover:bg-surface-container transition-colors"><span class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"></span><span class="font-label-md text-label-md text-on-surface font-medium truncate max-w-[150px] lg:max-w-none">Google H2S Bootcamp</span><span class="material-symbols-outlined text-on-surface-variant text-[18px]">unfold_more</span></div><button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-error ring-2 ring-surface-container-lowest"></span></button><div class="h-6 w-px bg-outline-variant/60 hidden sm:block"></div><div class="flex items-center gap-2.5 pl-1 cursor-pointer group"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-outline-variant/40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClx4JL2MRoiJzrM43mfa_7nILDiYQsse96DTz-Zp2iEfk4lsEdIKahf1qS4hJdM-1c2BZvnr1Y5LnZ-zEF4ul2b0BRdaUfCtCX1xNSvrrEKJqKQcmj9QZVi2YM64Udj1GJih37GN6oJg1t57loEskyGVy27BllAljHyFR01--1uVyY2JIRSXltfy3wuvxkIP5HPcvR3dFU24quKuN0wKCSexjhBDMvjxwl5gM2RP4y1oCmJFfzhC_1"/><div class="hidden lg:flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface font-semibold leading-tight">Sarah Lin</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Event Lead</span></div><span class="material-symbols-outlined text-on-surface-variant text-[18px] group-hover:text-on-surface transition-colors">expand_more</span></div></div></div></header><main class="w-full pt-16 bg-background"><div class="max-w-7xl mx-auto px-6 py-6"><div class="flex flex-col w-full gap-6">
+<!-- EVENT BANNER HEADER -->
+<section class="w-full bg-surface-container-lowest rounded-2xl shadow-sm p-6 lg:p-8 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 relative overflow-hidden">
+<!-- Subtle Ambient Backdrop Accent -->
+<div class="absolute -right-24 -top-24 w-80 h-80 bg-primary-fixed/30 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute left-1/3 -bottom-20 w-64 h-64 bg-secondary-fixed/20 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex flex-col gap-4 max-w-3xl z-10">
+<div class="flex flex-wrap items-center gap-2.5">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+          Hosted by Google for Developers
+        </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+          Mountain View Campus & Global Hybrid
+        </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+          March 2025
+        </span>
+</div>
+<div>
+<h1 class="font-display text-display text-on-surface tracking-tight font-bold">Google H2S Bootcamp 2025</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+          Turn your sprint achievements, hackathon builds, and mentor milestones into reach-amplifying LinkedIn content.
+        </p>
+</div>
+<!-- Official Hashtags -->
+<div class="flex flex-wrap items-center gap-2 pt-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold uppercase tracking-wider">Official Tags:</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-primary font-label-sm text-label-sm font-medium hover:bg-surface-container-high cursor-pointer transition-colors">#GoogleH2S</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-primary font-label-sm text-label-sm font-medium hover:bg-surface-container-high cursor-pointer transition-colors">#GoogleDevelopers</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-primary font-label-sm text-label-sm font-medium hover:bg-surface-container-high cursor-pointer transition-colors">#GeminiSprint</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-primary font-label-sm text-label-sm font-medium hover:bg-surface-container-high cursor-pointer transition-colors">#TechBootcamp2025</span>
+</div>
+<!-- Quick Links -->
+<div class="flex flex-wrap items-center gap-3 pt-2">
+<a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined text-primary text-[18px]">share</span>
+          LinkedIn Page
+        </a>
+<a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">tag</span>
+          X / Twitter Feed
+        </a>
+<a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+          Event Hub
+        </a>
+</div>
+</div>
+<!-- Right Header Column: Portal Meta & Dashboard Switch -->
+<div class="flex flex-col sm:flex-row lg:flex-col items-start lg:items-end justify-between self-stretch lg:self-auto gap-4 shrink-0 z-10 pt-4 lg:pt-0">
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-tertiary-container/10 text-tertiary font-label-md text-label-md font-semibold">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+        Attendee Authoring Portal
+      </div>
+<a class="group inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-medium transition-all shadow-sm" data-path="organizer-dashboard" href="#">
+<span>Switch to Organizer Dashboard</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-0.5 transition-transform text-primary">arrow_forward</span>
+</a>
+</div>
+</section>
+<!-- TWO-COLUMN WORKSPACE -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start w-full">
+<!-- LEFT COLUMN: Input & AI Controls (~48% -> 6 cols in 12-col grid) -->
+<div class="lg:col-span-6 flex flex-col gap-6 w-full">
+<div class="bg-surface-container-lowest rounded-2xl p-6 lg:p-7 shadow-sm flex flex-col gap-6">
+<!-- Workspace Header -->
+<div class="flex items-start justify-between gap-4">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<div class="p-1.5 rounded-lg bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-[22px]">auto_awesome</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">Create Your LinkedIn Post</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Turn your bootcamp highlights into an engaging, professional story in seconds.</p>
+</div>
+<span class="px-2.5 py-1 rounded-md bg-surface-container text-primary font-label-sm text-label-sm font-semibold uppercase">Step 1 of 2</span>
+</div>
+<!-- SECTION 1: PHOTO UPLOAD -->
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<label class="font-label-lg text-label-lg text-on-surface font-semibold flex items-center gap-1.5">
+<span>Attached Media</span>
+<span class="text-on-surface-variant font-normal font-label-sm text-label-sm">(2 of 4 selected)</span>
+</label>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Supports JPG, PNG up to 15MB</span>
+</div>
+<!-- Upload Dropzone -->
+<div class="w-full bg-surface-container-low rounded-xl p-5 flex flex-col items-center justify-center text-center cursor-pointer hover:bg-surface-container transition-all group">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary group-hover:scale-105 transition-transform shadow-xs">
+<span class="material-symbols-outlined text-[24px]">cloud_upload</span>
+</div>
+<p class="font-label-md text-label-md text-on-surface font-semibold mt-2.5">
+              Drag & drop event photos here, or <span class="text-primary hover:underline">browse files</span>
+</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">High-resolution stage, team, or project photos boost reach by +47%</p>
+</div>
+<!-- Thumbnail Preview Strip -->
+<div class="grid grid-cols-3 gap-3 pt-1">
+<!-- Thumbnail 1 -->
+<div class="relative group rounded-xl overflow-hidden bg-surface-container aspect-video shadow-xs">
+<img alt="Hackathon team collaborating" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcUEipWwtp4bH7TPey8ea9x_dnIphJ9RRopiaCh1H6vuGUKebUTta1BXmIrP4W8P1eAT-cManzBWAM6y-tOmZnf4BSM_-aF9CDG6tNNdXOLlkFzsrUTbpz1vejzDUjxZN4dsWutafNEB3Uco3uIPX_MZ8nhWjnatburzIvBgCcEN5VPJ7vNI3DQhvrdU4_VgIuIZjMwDDK9UI5h4bjsMeSLdhAYIMhC7SiAkZn5jpdNPgr3TowGIX9"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/70 via-transparent to-transparent flex items-end p-2">
+<span class="font-body-sm text-body-sm text-surface-container-lowest truncate max-w-[85%]">hackathon_team.jpg</span>
+</div>
+<button class="absolute top-1.5 right-1.5 w-5 h-5 rounded-full bg-on-surface/80 hover:bg-error text-surface-container-lowest flex items-center justify-center transition-colors shadow-xs" title="Remove photo" type="button">
+<span class="material-symbols-outlined text-[13px]">close</span>
+</button>
+</div>
+<!-- Thumbnail 2 -->
+<div class="relative group rounded-xl overflow-hidden bg-surface-container aspect-video shadow-xs">
+<img alt="Developers holding certificates" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwNoEkTfWGnhzX7LA6KGvomJQNHYwra7TgGvm4344O8nKRkeAE-ocAOkDeo38fG-buxogfdV8ZFnMhUDzXf8W_Z6RHh2zoFUTI0Skt6iwbiErpkI9P-NKhhMd3sIOq4hjFRhe7xpVUaJ5y3yGxmK-p3zxm3WCIqL7WLU35Wk46z1cCBaRWcxszxkajRTa2GfqPc33TY5UO88tTFt5zSWc06vkbpaK_uDewQ9XLvJldN5boQJwQpg5O"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/70 via-transparent to-transparent flex items-end p-2">
+<span class="font-body-sm text-body-sm text-surface-container-lowest truncate max-w-[85%]">bootcamp_certificate.jpg</span>
+</div>
+<button class="absolute top-1.5 right-1.5 w-5 h-5 rounded-full bg-on-surface/80 hover:bg-error text-surface-container-lowest flex items-center justify-center transition-colors shadow-xs" title="Remove photo" type="button">
+<span class="material-symbols-outlined text-[13px]">close</span>
+</button>
+</div>
+<!-- Add More Button -->
+<button class="rounded-xl bg-surface-container-low hover:bg-surface-container flex flex-col items-center justify-center gap-1 aspect-video text-on-surface-variant hover:text-on-surface transition-all" type="button">
+<span class="material-symbols-outlined text-[20px] text-primary">add_circle</span>
+<span class="font-label-sm text-label-sm font-semibold">Add more</span>
+</button>
+</div>
+</div>
+<!-- SECTION 2: TONE SELECTOR -->
+<div class="flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<label class="font-label-lg text-label-lg text-on-surface font-semibold">Select Tone of Voice</label>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Influences copy cadence & hooks</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-2 gap-2.5">
+<!-- Professional -->
+<button class="tone-chip flex items-start gap-2.5 p-3 rounded-xl bg-surface-container-low hover:bg-surface-container text-left transition-all group" type="button">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px] group-hover:text-primary transition-colors mt-0.5">business_center</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Professional</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant leading-tight truncate">Career-focused & polished</span>
+</div>
+</button>
+<!-- Grateful Attendee (ACTIVE) -->
+<button class="tone-chip active flex items-start gap-2.5 p-3 rounded-xl bg-primary text-on-primary text-left transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-on-primary text-[20px] mt-0.5" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md text-on-primary font-semibold">Grateful Attendee</span>
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed"></span>
+</div>
+<span class="font-body-sm text-body-sm text-on-primary-container leading-tight truncate">Warm & mentor-honoring</span>
+</div>
+</button>
+<!-- Key Takeaways -->
+<button class="tone-chip flex items-start gap-2.5 p-3 rounded-xl bg-surface-container-low hover:bg-surface-container text-left transition-all group" type="button">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px] group-hover:text-primary transition-colors mt-0.5">lightbulb</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Key Takeaways</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant leading-tight truncate">Bulleted learning points</span>
+</div>
+</button>
+<!-- Excited Student / New Grad -->
+<button class="tone-chip flex items-start gap-2.5 p-3 rounded-xl bg-surface-container-low hover:bg-surface-container text-left transition-all group" type="button">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px] group-hover:text-primary transition-colors mt-0.5">rocket_launch</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Excited Student</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant leading-tight truncate">Milestone & high energy</span>
+</div>
+</button>
+</div>
+</div>
+<!-- SECTION 3: KEY HIGHLIGHTS / NOTES TEXTAREA -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<label class="font-label-lg text-label-lg text-on-surface font-semibold" for="attendee-notes">
+              Key Highlights & What You Learned
+            </label>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-mono">248 chars</span>
+</div>
+<div class="relative rounded-xl bg-surface-container-low overflow-hidden focus-within:bg-surface-container-lowest focus-within:ring-2 focus-within:ring-primary transition-all">
+<textarea class="w-full bg-transparent p-3.5 text-on-surface font-body-md text-body-md focus:outline-none resize-none leading-relaxed" id="attendee-notes" placeholder="Mention key projects, teammates, mentors, or favorite moments..." rows="4">Completed intensive 5-day hackathon sprint! Built an autonomous research agent using Gemini 1.5 Pro and Google Cloud Run. Immense gratitude to our mentor Alex Rivera and the whole Google Developer team for the hands-on code reviews. Loved connecting with fellow engineers from across the country.</textarea>
+</div>
+<!-- Quick Suggestion Pills -->
+<div class="flex flex-wrap items-center gap-1.5 pt-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Quick prompt prompts:</span>
+<button class="px-2.5 py-1 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-colors" type="button">
+              + Mention mentors
+            </button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-colors" type="button">
+              + Cloud architecture
+            </button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-colors" type="button">
+              + Team collaboration
+            </button>
+</div>
+</div>
+<!-- SECTION 4: PRIMARY ACTION GENERATE BUTTON -->
+<div class="flex flex-col gap-2 pt-2">
+<button class="w-full py-4 px-6 rounded-xl bg-primary hover:bg-on-primary-fixed-variant active:scale-[0.99] text-on-primary font-label-lg text-label-lg font-bold flex items-center justify-center gap-2.5 shadow-md transition-all group" id="generate-btn" type="button">
+<span class="material-symbols-outlined text-[22px] group-hover:rotate-12 transition-transform">auto_awesome</span>
+<span>Generate LinkedIn Post with EventPulse AI</span>
+</button>
+<div class="flex items-center justify-center gap-1.5 text-center">
+<span class="material-symbols-outlined text-[16px] text-tertiary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+              Automatically incorporates verified <span class="font-semibold text-primary">#GoogleH2S</span> hashtags and tags <span class="font-semibold text-primary">@Google for Developers</span>.
+            </span>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Realistic LinkedIn Post Live Preview (~52% -> 6 cols) -->
+<div class="lg:col-span-6 flex flex-col gap-4 w-full lg:sticky lg:top-24">
+<!-- Preview Section Header -->
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Live LinkedIn Post Preview</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-tertiary-container/10 text-tertiary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+            Copy Ready
+          </span>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors" title="Mobile preview toggle" type="button">
+<span class="material-symbols-outlined text-[20px]">smartphone</span>
+</button>
+<button class="p-1.5 rounded-lg bg-surface-container text-on-surface transition-colors" title="Desktop preview toggle" type="button">
+<span class="material-symbols-outlined text-[20px]">desktop_windows</span>
+</button>
+</div>
+</div>
+<!-- LINKEDIN PREVIEW CARD (Pixel-Accurate LinkedIn Styling) -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-md overflow-hidden flex flex-col">
+<!-- Author Header -->
+<div class="p-4 sm:p-5 flex items-start justify-between gap-3">
+<div class="flex items-start gap-3 min-w-0">
+<!-- Author Avatar -->
+<div class="relative shrink-0">
+<img alt="Sarah Lin portrait" class="w-12 h-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClx4JL2MRoiJzrM43mfa_7nILDiYQsse96DTz-Zp2iEfk4lsEdIKahf1qS4hJdM-1c2BZvnr1Y5LnZ-zEF4ul2b0BRdaUfCtCX1xNSvrrEKJqKQcmj9QZVi2YM64Udj1GJih37GN6oJg1t57loEskyGVy27BllAljHyFR01--1uVyY2JIRSXltfy3wuvxkIP5HPcvR3dFU24quKuN0wKCSexjhBDMvjxwl5gM2RP4y1oCmJFfzhC_1"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-tertiary-container rounded-full ring-2 ring-surface-container-lowest"></span>
+</div>
+<!-- Author Metadata -->
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg font-bold text-on-surface truncate">Sarah Lin</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">• 1st</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+                Software Engineer & AI Builder | Google H2S Bootcamp '25 Fellow | Prev. SWE Intern
+              </p>
+<div class="flex items-center gap-1 text-on-surface-variant font-body-sm text-body-sm mt-0.5">
+<span>Just now</span>
+<span>•</span>
+<span class="material-symbols-outlined text-[14px]">public</span>
+</div>
+</div>
+</div>
+<!-- LinkedIn Ellipsis & Actions -->
+<div class="flex items-center gap-1 text-on-surface-variant shrink-0">
+<button class="p-1 rounded-full hover:bg-surface-container transition-colors" title="More options" type="button">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</button>
+</div>
+</div>
+<!-- Post Body Content -->
+<div class="px-4 sm:px-5 pb-3 font-body-md text-body-md text-on-surface leading-relaxed flex flex-col gap-3" id="post-body-content">
+<p>
+            Still processing what an incredible week it was at the <span class="font-semibold text-primary">Google H2S Bootcamp</span> 🚀
+          </p>
+<p>
+            Over the past 5 days at Google Mountain View, I had the privilege to deep-dive into cutting-edge cloud infrastructure and build with <span class="font-semibold text-primary">Gemini 1.5 Pro</span>. Our team architected an end-to-end multi-agent system deployed directly on <span class="font-semibold text-primary">Google Cloud Run</span>.
+          </p>
+<div class="flex flex-col gap-1.5 pl-2">
+<p class="font-medium text-on-surface">3 big takeaways from this experience:</p>
+<p class="flex items-start gap-2">
+<span>💡</span>
+<span><strong>Modular Architecture:</strong> Scalability starts with clear agent communication boundaries.</span>
+</p>
+<p class="flex items-start gap-2">
+<span>💡</span>
+<span><strong>Engineering Mentorship:</strong> Real-time code reviews from Google engineers shaved days off our debugging cycles.</span>
+</p>
+<p class="flex items-start gap-2">
+<span>💡</span>
+<span><strong>Community Power:</strong> The talent and energy in this cohort was unmatched!</span>
+</p>
+</div>
+<p>
+            Huge thank you to <span class="font-semibold text-primary cursor-pointer hover:underline">@Google for Developers</span>, our dedicated mentor <span class="font-semibold text-primary cursor-pointer hover:underline">Alex Rivera</span>, and all the event organizers for putting together such an empowering experience.
+          </p>
+<p>
+            Excited for what's next! 💻✨
+          </p>
+<p class="font-medium text-primary flex flex-wrap gap-x-2 gap-y-1 pt-1">
+<span class="cursor-pointer hover:underline">#GoogleH2S</span>
+<span class="cursor-pointer hover:underline">#GoogleDevelopers</span>
+<span class="cursor-pointer hover:underline">#GeminiSprint</span>
+<span class="cursor-pointer hover:underline">#TechBootcamp2025</span>
+<span class="cursor-pointer hover:underline">#CloudSkills</span>
+<span class="cursor-pointer hover:underline">#WomenInTech</span>
+</p>
+</div>
+<!-- Uploaded Photo Grid in Post (Authentic 2-photo LinkedIn layout) -->
+<div class="w-full grid grid-cols-2 gap-1 bg-surface-container-high overflow-hidden select-none">
+<div class="h-64 sm:h-72 overflow-hidden bg-surface-container">
+<img alt="Bootcamp team collaborating" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcUEipWwtp4bH7TPey8ea9x_dnIphJ9RRopiaCh1H6vuGUKebUTta1BXmIrP4W8P1eAT-cManzBWAM6y-tOmZnf4BSM_-aF9CDG6tNNdXOLlkFzsrUTbpz1vejzDUjxZN4dsWutafNEB3Uco3uIPX_MZ8nhWjnatburzIvBgCcEN5VPJ7vNI3DQhvrdU4_VgIuIZjMwDDK9UI5h4bjsMeSLdhAYIMhC7SiAkZn5jpdNPgr3TowGIX9"/>
+</div>
+<div class="h-64 sm:h-72 overflow-hidden bg-surface-container">
+<img alt="Developers with certificates" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwNoEkTfWGnhzX7LA6KGvomJQNHYwra7TgGvm4344O8nKRkeAE-ocAOkDeo38fG-buxogfdV8ZFnMhUDzXf8W_Z6RHh2zoFUTI0Skt6iwbiErpkI9P-NKhhMd3sIOq4hjFRhe7xpVUaJ5y3yGxmK-p3zxm3WCIqL7WLU35Wk46z1cCBaRWcxszxkajRTa2GfqPc33TY5UO88tTFt5zSWc06vkbpaK_uDewQ9XLvJldN5boQJwQpg5O"/>
+</div>
+</div>
+<!-- Social Engagement Metrics -->
+<div class="px-4 sm:px-5 py-2.5 flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm bg-surface-container-lowest">
+<div class="flex items-center gap-1.5">
+<!-- LinkedIn Stacked Reaction Badges -->
+<div class="flex items-center -space-x-1">
+<span class="w-5 h-5 rounded-full bg-[#0a66c2] text-white flex items-center justify-center text-[10px] ring-1 ring-surface-container-lowest">
+                👍
+              </span>
+<span class="w-5 h-5 rounded-full bg-[#e7a33e] text-white flex items-center justify-center text-[10px] ring-1 ring-surface-container-lowest">
+                💡
+              </span>
+<span class="w-5 h-5 rounded-full bg-[#44712e] text-white flex items-center justify-center text-[10px] ring-1 ring-surface-container-lowest">
+                👏
+              </span>
+</div>
+<span class="font-medium text-on-surface">184</span>
+</div>
+<div class="flex items-center gap-3">
+<span>42 comments</span>
+<span>•</span>
+<span>12 reposts</span>
+</div>
+</div>
+<!-- Separator -->
+<div class="h-px w-full bg-surface-container"></div>
+<!-- Post Action Bar (Like, Comment, Repost, Send) -->
+<div class="px-3 py-1.5 grid grid-cols-4 gap-1 bg-surface-container-lowest">
+<button class="py-2.5 px-1 rounded-lg hover:bg-surface-container-low text-on-surface-variant hover:text-primary flex items-center justify-center gap-1.5 font-label-md text-label-md transition-colors" type="button">
+<span class="material-symbols-outlined text-[19px]">thumb_up</span>
+<span class="hidden sm:inline">Like</span>
+</button>
+<button class="py-2.5 px-1 rounded-lg hover:bg-surface-container-low text-on-surface-variant hover:text-primary flex items-center justify-center gap-1.5 font-label-md text-label-md transition-colors" type="button">
+<span class="material-symbols-outlined text-[19px]">comment</span>
+<span class="hidden sm:inline">Comment</span>
+</button>
+<button class="py-2.5 px-1 rounded-lg hover:bg-surface-container-low text-on-surface-variant hover:text-primary flex items-center justify-center gap-1.5 font-label-md text-label-md transition-colors" type="button">
+<span class="material-symbols-outlined text-[19px]">repeat</span>
+<span class="hidden sm:inline">Repost</span>
+</button>
+<button class="py-2.5 px-1 rounded-lg hover:bg-surface-container-low text-on-surface-variant hover:text-primary flex items-center justify-center gap-1.5 font-label-md text-label-md transition-colors" type="button">
+<span class="material-symbols-outlined text-[19px]">send</span>
+<span class="hidden sm:inline">Send</span>
+</button>
+</div>
+</div>
+<!-- Bottom Action Controls Toolbar -->
+<div class="bg-surface-container-lowest rounded-2xl p-4 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-3">
+<div class="flex items-center gap-2 w-full sm:w-auto">
+<!-- Copy Text Button -->
+<button class="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold transition-all" id="copy-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+<span id="copy-btn-text">Copy Text</span>
+</button>
+<!-- Regenerate Button -->
+<button class="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold transition-all" id="regen-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">sync</span>
+<span>Regenerate</span>
+</button>
+</div>
+<!-- Open in LinkedIn Primary CTA -->
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-primary-container hover:bg-primary active:scale-[0.99] text-on-primary font-label-md text-label-md font-bold shadow-sm transition-all" href="https://www.linkedin.com/feed/" rel="noopener noreferrer" target="_blank">
+<span>Open in LinkedIn</span>
+<span class="material-symbols-outlined text-[18px]">launch</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Micro-interactions: Tone Selector Toggling
+  const toneChips = document.querySelectorAll('.tone-chip');
+  toneChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      toneChips.forEach(c => {
+        c.classList.remove('active', 'bg-primary', 'text-on-primary', 'shadow-sm');
+        c.classList.add('bg-surface-container-low', 'text-on-surface');
+        const icon = c.querySelector('.material-symbols-outlined');
+        if (icon) {
+          icon.classList.remove('text-on-primary');
+          icon.classList.add('text-on-surface-variant');
+        }
+        const subtext = c.querySelector('.truncate');
+        if (subtext) {
+          subtext.classList.remove('text-on-primary-container');
+          subtext.classList.add('text-on-surface-variant');
+        }
+      });
+
+      chip.classList.add('active', 'bg-primary', 'text-on-primary', 'shadow-sm');
+      chip.classList.remove('bg-surface-container-low', 'text-on-surface');
+      const activeIcon = chip.querySelector('.material-symbols-outlined');
+      if (activeIcon) {
+        activeIcon.classList.remove('text-on-surface-variant');
+        activeIcon.classList.add('text-on-primary');
+      }
+      const activeSubtext = chip.querySelector('.truncate');
+      if (activeSubtext) {
+        activeSubtext.classList.remove('text-on-surface-variant');
+        activeSubtext.classList.add('text-on-primary-container');
+      }
+    });
+  });
+
+  // Copy Post Content to Clipboard
+  const copyBtn = document.getElementById('copy-btn');
+  const copyBtnText = document.getElementById('copy-btn-text');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', () => {
+      const postText = document.getElementById('post-body-content').innerText;
+      navigator.clipboard.writeText(postText).then(() => {
+        const originalText = copyBtnText.innerText;
+        copyBtnText.innerText = 'Copied!';
+        copyBtn.classList.add('bg-tertiary-container', 'text-on-tertiary');
+        setTimeout(() => {
+          copyBtnText.innerText = originalText;
+          copyBtn.classList.remove('bg-tertiary-container', 'text-on-tertiary');
+        }, 2200);
+      });
+    });
+  }
+
+  // Quick regeneration pulse animation
+  const regenBtn = document.getElementById('regen-btn');
+  const generateBtn = document.getElementById('generate-btn');
+  const postBody = document.getElementById('post-body-content');
+
+  function triggerRegenerationAnimation() {
+    if (!postBody) return;
+    postBody.classList.add('opacity-40', 'transition-opacity');
+    setTimeout(() => {
+      postBody.classList.remove('opacity-40');
+    }, 450);
+  }
+
+  if (regenBtn) regenBtn.addEventListener('click', triggerRegenerationAnimation);
+  if (generateBtn) generateBtn.addEventListener('click', triggerRegenerationAnimation);
+</script></div></main><footer class="w-full bg-surface-container-lowest border-t border-outline-variant/40 py-6 mt-12"><div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-on-surface-variant font-body-sm text-body-sm"><div class="flex items-center gap-2"><span class="font-semibold text-on-surface">EventPulse</span><span>© 2025 AI Post Suite. Professional Thought Leadership Engine.</span></div><div class="flex items-center gap-6"><a class="hover:text-on-surface transition-colors" href="#">Privacy Policy</a><a class="hover:text-on-surface transition-colors" href="#">Terms of Service</a><a class="hover:text-on-surface transition-colors" href="#">Documentation</a></div></div></footer></body></html>
